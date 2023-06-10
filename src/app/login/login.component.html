@@ -1,0 +1,58 @@
+<main class="vh-100 w-100 d-flex flex-wrap">
+
+    <div class="col-6 w-50 bg-primary">
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-6">
+                <img src="assets/images/base-de-datos.png" class="img-fluid" alt="...">
+            </div>
+            <div>
+                <h1 class="text-uppercase mt-1 text-bold text-white">Manager Database</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-6 border border-primary w-50">
+        <div class="container w-100 h-100 ">
+            <div class="row w-100 h-100  ">
+                <div class="col w-100 h-100 d-flex justify-content-center align-items-center">
+                    
+                    <form (ngSubmit)="formulariologin()" id="loginForm">
+                        <div class="mb-3 p-2 bg-primary align-self-start rounded ">
+                            <h4 class="text-center text- text-white text-uppercase">Datos de Acceso</h4>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Base de Datos</label>
+                           <input type="dbName" [(ngModel)]="serverdba.dbName" [ngModelOptions]="{standalone: true}" class="form-control" id="email"  placeholder="">                            
+                        
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Usuario</label>
+                            <input type="username" [(ngModel)]="serverdba.username" [ngModelOptions]="{standalone: true}" class="form-control" id="email"  placeholder="">
+                           
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" [(ngModel)]="serverdba.password" [ngModelOptions]="{standalone: true}" class="form-control" id="email"  placeholder="">
+                            
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" click="Inicar sesion">Iniciar Sesion</button>
+
+                    </form>
+                    <div *ngIf="usuarioInvalido" class="alert alert-danger d-flex align-items-center" role="alert">
+                        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                            <use xlink:href="#exclamation-triangle-fill" />
+                        </svg>
+                        <div>
+                            El usuario o contraseña son incorrectos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
